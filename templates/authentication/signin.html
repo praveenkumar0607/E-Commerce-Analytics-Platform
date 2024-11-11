@@ -1,0 +1,27 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
+<div class="form sign-in">
+    <form method="post" action="{% url 'signin' %}" class="form sign-in">
+        {% csrf_token %}
+        <h2>Welcome To Nighwan Technology </h2>
+        <label>
+            <span>Email</span>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email ID" required>
+        </label>
+        <label>
+            <span>Password</span>
+            <input type="password" class="form-control" id="pass1" name="password" placeholder="Enter Your Password" required>
+        </label>
+        <p class="forgot-pass"><a href="{% url 'send-reset-email' %}">Forgot password?</a></p>
+        <button type="submit" class="submit">Sign In</button>
+    </form>
+    {% if errors %}
+        <div class="errors">
+            <ul>
+                {% for field, error in errors.items %}
+                    <li>{{ field }}: {{ error }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+</div>

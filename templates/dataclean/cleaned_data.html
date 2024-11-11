@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Cleaning</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 80%;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 28px; /* Adjust font size as needed */
+        }
+        form {
+            margin-top: 20px;
+        }
+        select {
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 200px; /* Adjust width as needed */
+            font-size: 14px; /* Adjust font size as needed */
+        }
+        select:hover,
+        select:focus {
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px; /* Add margin to separate from submit button */
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .popup {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        .popup.visible {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Data Cleaning</h1>
+
+        <form method="post" action="{% url 'clean-csv-file' %}">
+            {% csrf_token %}
+            <label for="csv_file">Choose a file:</label><br>
+            <select id="csv_file" name="csv_file">
+                {% for file in files %}
+                    <option value="{{ file.path }}">{{ file.name }}</option>
+                {% endfor %}
+            </select><br><br>
+            <button type="submit">Submit</button>
+            <a href="http://127.0.0.1:8000/dataclean/fillnull/">
+                <button type="button">Cancel</button>
+            </a>
+        </form>
+
+        <div class="popup" id="popup">
+            <p>{{ message }}</p>
+            <button onclick="closePopup()">Close</button>
+        </div>
+
+        <button id="viewDataButton" style="display: none; margin-top: 10px;">Check Data Details -- <span>Click here</span></button>
+
+    </div>
+
+    <script>
+        {% if message %}
+        document.getElementById('popup').classList.add('visible');
+        // Show the view data button only if there's a message
+        document.getElementById('viewDataButton').style.display = 'block';
+        {% endif %}
+
+        function closePopup() {
+            document.getElementById('popup').classList.remove('visible');
+            // Show the view data button after closing the popup
+            document.getElementById('viewDataButton').style.display = 'block';
+        }
+
+        // Redirect function for the view data button
+        document.getElementById('viewDataButton').onclick = function() {
+            window.location.href = 'http://127.0.0.1:8000/dataclean/viewdatainfo/';
+        };
+    </script>
+</body>
+</html>

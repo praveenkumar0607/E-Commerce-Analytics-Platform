@@ -1,0 +1,185 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background-color: #343a40; 
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    flex-shrink: 0;
+}
+
+.header .logo {
+    display: block;
+    float: left;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.header .logo img {
+    max-height: 60px; /* Adjust the max-height as needed */
+    vertical-align: middle; /* Align the logo vertically */
+}
+
+.header .menu {
+    float: right;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #343a40; /* Matching background color */
+}
+
+.header .menu li {
+    float: left;
+}
+
+.header .menu li a {
+    display: block;
+    padding: 20px 20px;
+    text-decoration: none;
+    color: #fff; /* Link color set to white */
+}
+
+.header .menu li a:hover {
+    background-color: #007bff; /* Hover color set to blue */
+    color: #fff; /* Ensure text color remains white on hover */
+}
+
+.header .menu li .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.header .menu li .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #343a40; /* Matching background color */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.header .menu li .dropdown-content a {
+    color: #fff; /* Link color set to white */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.header .menu li .dropdown-content a:hover {
+    background-color: #28a745; /* Hover color set to green */
+    color: #fff; /* Ensure text color remains white on hover */
+}
+
+.header .menu li .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+@media (min-width: 48em) {
+    .header .menu {
+        max-height: none;
+        overflow: visible;
+    }
+
+    .header .menu li {
+        float: left;
+        margin-left: 20px; /* Adjust spacing between menu items */
+    }
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc; /* Adjust color and thickness as needed */
+    margin: 0; /* Ensure no margin for cleaner separation */
+}
+
+/* Additional styling for buttons */
+.button {
+    background-color: #007bff; /* Button color */
+    color: #fff; /* Button text color */
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #28a745; /* Hover color set to green */
+    color: #fff; /* Ensure text color remains white on hover */
+}
+
+
+/* .header {
+    background-color:#343a40; 
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+}
+
+.header .logo {
+    display: block;
+    float: left;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.header .logo img {
+    max-height: 60px; 
+}
+
+.header .menu {
+    float: right;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.header .menu li {
+    float: left;
+}
+
+.header .menu li a {
+    display: block;
+    padding: 20px 20px;
+    text-decoration: none;
+    color: #333; 
+}
+
+.header .menu li a:hover {
+    background-color: #f4f4f4;
+}
+
+@media (min-width: 48em) {
+    .header .menu {
+        max-height: none;
+        overflow: visible;
+    }
+
+    .header .menu li {
+        float: left;
+        margin-left: 20px; 
+    }
+}
+
+hr {
+    border: none;
+    border-top: 0px solid #ccc; 
+}
+
+
+ */
+

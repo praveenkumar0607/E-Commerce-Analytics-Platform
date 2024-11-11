@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.footer {
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.main-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 80px; /* Adjust this value based on your header height */
+    margin-bottom: 80px; /* Adjust this value based on your footer height */
+    background-color: #f8f9fa;
+    width: 100%;
+}

@@ -1,0 +1,24 @@
+{% load static %}
+<header class="header">
+
+    <a href="#" class="logo">
+        <img src="{% static 'img/nighwantech2.png' %}" alt="NighwanTech">
+    </a>
+    <ul class="menu">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        {% comment %} <li><a href="{% url 'upload' %}">DataStore</a></li> {% endcomment %}
+        {% comment %} <li><a href="{% url 'manipulation' %}">DataManipulate</a></li> {% endcomment %}
+        <li><a href="{% url 'visualization' %}">DataVisualize</a></li>
+        {% comment %} <li><a href="{% url 'selecttable' %}">Select Table</a></li> {% endcomment %}
+        <li><a href="{% url 'linkstable' %}">Data Operation</a></li>
+        {% comment %} <li><a href="{% url 'fillnull' %}">DataClean</a></li> {% endcomment %}
+        {% comment %} <li><a href="{% url 'uploadpage' %}">Upload Order Details</a></li> {% endcomment %}
+        <li><a href="{% url 'signout' %}">Signout</a></li>
+    
+
+    
+    
+        
+    </ul>
+</header>
+<hr>

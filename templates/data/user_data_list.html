@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}User Data List{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/data/userdatalist.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="main-container">
+    <div class="main">
+        <h1>User Data List</h1>
+
+        {% if user_data_entries %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Type</th>
+                        <th>Days for Shipping Real</th>
+                        <th>Days for Shipment Scheduled</th>
+                        <th>Benefit per Order</th>
+                        <th>Sales per Customer</th>
+                        <th>Delivery Status</th>
+                        <th>Late Delivery Risk</th>
+                        <th>Category Id</th>
+                        <th>Category Name</th>
+                        <th>Customer City</th>
+                        <th>Customer Country</th>
+                        <th>Customer Email</th>
+                        <th>Customer Fname</th>
+                        <th>Customer Id</th>
+                        <th>Customer Lname</th>
+                        <th>Customer Password</th>
+                        <th>Customer Segment</th>
+                        <th>Customer State</th>
+                        <th>Customer Street</th>
+                        <th>Customer Zipcode</th>
+                        <th>Department Id</th>
+                        <th>Department Name</th>
+                        <th>Latitude</th>
+                        <th>Longitude</th>
+                        <th>Market</th>
+                        <th>Order City</th>
+                        <th>Order Country</th>
+                        <th>Order Customer Id</th>
+                        <th>Order Date</th>
+                        <th>Order Id</th>
+                        <th>Order Item Cardprod Id</th>
+                        <th>Order Item Discount</th>
+                        <th>Order Item Discount Rate</th>
+                        <th>Order Item Id</th>
+                        <th>Order Item Product Price</th>
+                        <th>Order Item Profit Ratio</th>
+                        <th>Order Item Quantity</th>
+                        <th>Sales</th>
+                        <th>Order Item Total</th>
+                        <th>Order Profit Per Order</th>
+                        <th>Order Region</th>
+                        <th>Order State</th>
+                        <th>Order Status</th>
+                        <th>Order Zipcode</th>
+                        <th>Product Card Id</th>
+                        <th>Product Category Id</th>
+                        <th>Product Description</th>
+                        <th>Product Image</th>
+                        <th>Product Name</th>
+                        <th>Product Price</th>
+                        <th>Product Status</th>
+                        <th>Shipping Date</th>
+                        <th>Shipping Mode</th>
+                        <th>Table Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entry in user_data_entries %}
+                        <tr>
+                            <td>{{ entry.id }}</td>
+                            <td>{{ entry.Type }}</td>
+                            <td>{{ entry.Days_for_shipping_real }}</td>
+                            <td>{{ entry.Days_for_shipment_scheduled }}</td>
+                            <td>{{ entry.Benefit_per_order }}</td>
+                            <td>{{ entry.Sales_per_customer }}</td>
+                            <td>{{ entry.Delivery_Status }}</td>
+                            <td>{{ entry.Late_delivery_risk }}</td>
+                            <td>{{ entry.Category_Id }}</td>
+                            <td>{{ entry.Category_Name }}</td>
+                            <td>{{ entry.Customer_City }}</td>
+                            <td>{{ entry.Customer_Country }}</td>
+                            <td>{{ entry.Customer_Email }}</td>
+                            <td>{{ entry.Customer_Fname }}</td>
+                            <td>{{ entry.Customer_Id }}</td>
+                            <td>{{ entry.Customer_Lname }}</td>
+                            <td>{{ entry.Customer_Password }}</td>
+                            <td>{{ entry.Customer_Segment }}</td>
+                            <td>{{ entry.Customer_State }}</td>
+                            <td>{{ entry.Customer_Street }}</td>
+                            <td>{{ entry.Customer_Zipcode }}</td>
+                            <td>{{ entry.Department_Id }}</td>
+                            <td>{{ entry.Department_Name }}</td>
+                            <td>{{ entry.Latitude }}</td>
+                            <td>{{ entry.Longitude }}</td>
+                            <td>{{ entry.Market }}</td>
+                            <td>{{ entry.Order_City }}</td>
+                            <td>{{ entry.Order_Country }}</td>
+                            <td>{{ entry.Order_Customer_Id }}</td>
+                            <td>{{ entry.order_date_DateOrders }}</td>
+                            <td>{{ entry.Order_Id }}</td>
+                            <td>{{ entry.Order_Item_Cardprod_Id }}</td>
+                            <td>{{ entry.Order_Item_Discount }}</td>
+                            <td>{{ entry.Order_Item_Discount_Rate }}</td>
+                            <td>{{ entry.Order_Item_Id }}</td>
+                            <td>{{ entry.Order_Item_Product_Price }}</td>
+                            <td>{{ entry.Order_Item_Profit_Ratio }}</td>
+                            <td>{{ entry.Order_Item_Quantity }}</td>
+                            <td>{{ entry.Sales }}</td>
+                            <td>{{ entry.Order_Item_Total }}</td>
+                            <td>{{ entry.Order_Profit_Per_Order }}</td>
+                            <td>{{ entry.Order_Region }}</td>
+                            <td>{{ entry.Order_State }}</td>
+                            <td>{{ entry.Order_Status }}</td>
+                            <td>{{ entry.Order_Zipcode }}</td>
+                            <td>{{ entry.Product_Card_Id }}</td>
+                            <td>{{ entry.Product_Category_Id }}</td>
+                            <td>{{ entry.Product_Description }}</td>
+                            <td>{{ entry.Product_Image }}</td>
+                            <td>{{ entry.Product_Name }}</td>
+                            <td>{{ entry.Product_Price }}</td>
+                            <td>{{ entry.Product_Status }}</td>
+                            <td>{{ entry.shipping_date_DateOrders }}</td>
+                            <td>{{ entry.Shipping_Mode }}</td>
+                            <td>{{ entry.tablename }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No data available.</p>
+        {% endif %}
+    </div>
+    <div>All Data </div>
+</div>
+{% endblock %}

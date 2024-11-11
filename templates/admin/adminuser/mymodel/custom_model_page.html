@@ -1,0 +1,18 @@
+<!-- templates/custom_model_page.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Model Page</title>
+</head>
+<body>
+    <h1>My Model Data</h1>
+    <ul>
+    {% for instance in instances %}
+        <li>{{ instance.name }} - {{ instance.description }}</li>
+    {% empty %}
+        <li>No data available</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

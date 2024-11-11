@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Analysis Result{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/datacsv/analysisresult.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="main-container">
+    <div class="main">
+        <h1>Analysis Result for {{ file_name }}</h1>
+        <h2>Columns:</h2>
+        <ul>
+            {% for column in columns_list %}
+                <li>{{ column }}</li>
+            {% endfor %}
+        </ul>
+        <div class="summary">
+            <h2>Summary Statistics:</h2>
+            {{ columns_summary|safe }}
+        </div>
+    </div>
+</div>
+{% endblock %}

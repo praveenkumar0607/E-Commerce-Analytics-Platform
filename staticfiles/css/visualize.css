@@ -1,0 +1,89 @@
+/* Reset and base styles */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Header and Footer styles */
+.header {
+    flex-shrink: 0;
+    z-index: 1;
+    /* Add your header styles here */
+}
+
+.footer {
+    flex-shrink: 0;
+    z-index: 1;
+    /* Add your footer styles here */
+}
+
+/* Main container for content */
+.main-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 80px; /* Adjust based on your header height */
+    margin-bottom: 80px; /* Adjust based on your footer height */
+    background-color: #f8f9fa;
+    width: 100%;
+}
+
+/* Main content area */
+.main {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Section for grouping content */
+.section {
+    margin-bottom: 40px;
+    text-align: left; /* Align text to the left */
+    max-width: 800px; /* Limit the width of the section */
+    margin: 0 auto; /* Center the section horizontally */
+}
+
+/* Styling for the select dropdown */
+select {
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Styling for the iframe container */
+.iframe-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    border-radius: 8px;
+    margin-top: 20px; /* Add top margin for spacing */
+}
+
+/* Styling for the iframe inside the container */
+iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Additional styles can be added as needed */

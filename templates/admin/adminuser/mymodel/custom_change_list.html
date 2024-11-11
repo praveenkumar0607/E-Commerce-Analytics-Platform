@@ -1,0 +1,31 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/adminuser/css/admin_custom.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Custom Change List</h1>
+    <p>Content of the custom change list page.</p>
+
+    <div class="quotes">
+        <h2>Quotes about Django</h2>
+        <ul>
+            {% for quote in django_quotes %}
+                <li>"{{ quote }}"</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="content">
+        <h2>About AI, Data Science, and Machine Learning</h2>
+        <p>{{ ai_paragraph_1 }}</p>
+        <p>{{ ai_paragraph_2 }}</p>
+        <p>{{ ai_paragraph_3 }}</p>
+        <p>{{ ai_paragraph_4 }}</p>
+        <p>{{ ai_paragraph_5 }}</p>
+        <p>{{ ai_paragraph_6 }}</p>
+    </div>
+</div>
+{% endblock %}

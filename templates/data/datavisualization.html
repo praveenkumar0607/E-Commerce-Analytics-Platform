@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Select Table{% endblock %}
+{% block extra_css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/select_table.css' %}">
+    <style>
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensure the container takes the full height of the viewport */
+        }
+        .main {
+            text-align: center; /* Center the text within the .main div */
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="main-container">
+    <div class="main">
+        <div class="section">
+            <h1>Select a Table</h1>
+            <form method="post">
+                {% csrf_token %}
+                <select name="table_id">
+                    <option value="">Select a table</option>
+                    {% for table in tables %}
+                        <option value="{{ table.id }}">{{ table.table_name }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit">Go to Dashboard</button>
+            </form>
+            {% if user.is_staff %}
+                <div class="admin-note">
+                    <p>As an admin, you will have the option to edit the dashboard once it is displayed.</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

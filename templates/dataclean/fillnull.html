@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Data{% endblock %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/datacsv/links.css' %}">
+
+<div class="main-container">
+    <div class="main">
+        <h1>Check Data Details</h1>
+        <table>
+            <tr>
+                <th>Operation</th>
+                <th>Link</th>
+            </tr>
+            <tr>
+                <td>Want to View Data Info.</td>
+                <td><a href="{% url 'viewdatainfo' %}">click here</a></td>
+            </tr>
+        </table>
+
+        <h1>Clean Data</h1>
+        <table>
+            <tr>
+                <th>Operation</th>
+                <th>Link</th>
+            </tr>
+            <tr>
+                <td>Want to clean the Data</td>
+                <td><a href="{% url 'cleaneddata' %}">click here</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+{% endblock %}

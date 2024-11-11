@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Upload CSV{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+{% endblock %}
+
+{% block content %}
+    <title>Analysis of Table: {{ table_name }}</title>
+    <style>
+        .main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .table-container {
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .summary-container {
+            background-color: #f9f9f9;
+            padding: 10px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Analysis of Table: {{ table_name }}</h1>
+
+        <h2>Null Values</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Column Name</th>
+                        <th>Null Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for column, null_count in null_values.items %}
+                        <tr>
+                            <td>{{ column }}</td>
+                            <td>{{ null_count }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Description</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Column Name</th>
+                        <th>Statistics</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for column, stats in description.items %}
+                        <tr>
+                            <td>{{ column }}</td>
+                            <td>
+                                <ul>
+                                    {% for key, value in stats.items %}
+                                        <li><strong>{{ key }}</strong>: {{ value }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Summary</h2>
+        <div class="summary-container">
+            <pre>{{ summary }}</pre>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+groups:
+  - name: django_alerts
+    rules:
+      - alert: ServerRunningProperly
+        expr: up{job="django"} == 1
+        for: 2m
+        labels:
+          severity: info
+        annotations:
+          summary: "Server is running properly"
+          description: "The Django server is up and running."
+
+      - alert: HighErrorRate
+        expr: rate(http_requests_total{status=~"5.."}[5m]) > 0.05
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High error rate detected"
+          description: "The error rate is above 5% for more than 1 minute."
+        unless: up{job="django"} == 1  # Only alert if the server is not running
+

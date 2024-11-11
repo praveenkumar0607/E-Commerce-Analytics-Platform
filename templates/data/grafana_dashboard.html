@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Grafana Dashboard{% endblock %}
+{% block extra_css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/grafana_dashboard.css' %}">
+    <style>
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align items at the start of the container */
+            min-height: 100vh; /* Full viewport height */
+            background-color: #f9f9f9; /* Optional background color */
+            padding: 20px; /* Optional padding */
+            padding-top: 40px; /* Add padding at the top */
+        }
+        .main {
+            text-align: center;
+            max-width: 1500px; /* Optional max width for the content */
+            width: 100%;
+            background-color: #fff; /* Background color for the content area */
+            padding: 20px; /* Padding inside the content area */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+        .iframe-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+        }
+        .grafana-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none; /* Remove the default iframe border */
+            border-radius: 8px; /* Optional: match the content area border radius */
+        }
+        .edit-link {
+            margin-top: 20px;
+        }
+        .edit-link a {
+            color: #007bff; /* Link color */
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .edit-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="main-container">
+    <div class="main">
+        <h1>Grafana Dashboard for Table: {{ table_name }}</h1>
+        <div class="iframe-container">
+            <iframe src="{{ grafana_url }}" class="grafana-iframe"></iframe>
+        </div>
+        {% if edit_url %}
+            <div class="edit-link">
+                <a href="{{ edit_url }}" target="_blank">Edit Dashboard</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

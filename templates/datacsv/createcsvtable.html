@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Upload CSV{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/datacsv/ceratecsvtable.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="main-container">
+    <div class="main">
+        <h1>Create a Table from Your Uploaded and Cleaned CSV Data for Visualization </h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Create Table</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

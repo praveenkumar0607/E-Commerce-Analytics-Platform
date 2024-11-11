@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Upload CSV{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/uploaddata.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="main">
+
+    <h1>Select a Table to Analyze</h1>
+    <form method="post" action="{% url 'selecttable' %}">
+        {% csrf_token %}
+        <label for="table_name">Select a Table:</label>
+        <select name="table_name" id="table_name">
+            {% for table in user_tables %}
+                <option value="{{ table.table_name }}">{{ table.table_name }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Analyze Table</button>
+    </form>
+
+
+</div>
+{% endblock %}
+

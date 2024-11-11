@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login to Nighwan Technology</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        p {
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        .button {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #4CAF50;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>Hi {{ user.name }},</p>
+        <p>Welcome to Nighwan Technology.</p>
+        <p>You entered a wrong password, that's why you have received this email.</p>
+        <p>No worries! If you would like to login, click on the button below and use our facilities:</p>
+        <p><a href="{{ link }}" class="button">Login</a></p>
+        <p>Regards,<br>Nighwan Technology Pvt Ltd</p>
+    </div>
+</body>
+</html>

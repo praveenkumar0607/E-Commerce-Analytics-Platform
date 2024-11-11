@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}CSV Tables{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/datacsv/listcsvtable.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="main-container">
+    <div class="main">
+        <h1>All the Tables are here !</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Table Name</th>
+                    <th>Created At</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for table in tables %}
+                <tr>
+                    <td>{{ table.table_name }}</td>
+                    <td>{{ table.created_at }}</td>
+                    <td>
+                        <div class="action-dropdown">
+                            <button class="dropbtn">Actions</button>
+                            <div class="dropdown-content">
+                                <form action="{% url 'deletecsvtable' table.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit">Delete</button>
+                                </form>
+                                <!-- Add more actions as needed -->
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

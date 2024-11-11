@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Already Registered</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+        }
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #ff0000;
+            margin-bottom: 20px;
+        }
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #4CAF50;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Email Already Registered</h1>
+        <p>{{ error_msg }}</p>
+        <a href="{% url 'signin' %}">Go to Sign In Page</a>
+        <br>
+        <a href="{% url 'account' %}">Go Back to Registration</a>
+    </div>
+</body>
+</html>

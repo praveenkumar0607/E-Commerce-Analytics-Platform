@@ -1,0 +1,42 @@
+<!-- myapp/templates/custom_page.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Page</title>
+</head>
+<body>
+    <h1>Welcome to the Custom Page</h1>
+    <p>This is a custom page linked from the admin interface.</p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- templates/custom_model_page.html -->
+
+{% comment %} <!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Model Page</title>
+</head>
+<body>
+    <h1>My Model Data</h1>
+    <ul>
+    {% for instance in instances %}
+        <li>{{ instance.name }} - {{ instance.description }}</li>
+    {% empty %}
+        <li>No data available</li>
+    {% endfor %}
+    </ul>
+</body>
+</html> {% endcomment %}

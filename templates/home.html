@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home - Data Services{% endblock %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+
+
+<div class="main-container">
+    <div class="main">
+        <h1>Welcome to Our Data Services Platform</h1>
+        <p>We provide comprehensive solutions for managing and analyzing your data. Our platform allows you to upload, manipulate, clean, and visualize data efficiently. Explore our services below:</p>
+
+        <div class="box-container">
+            <div class="box">
+                <h2>Data Upload and Management</h2>
+                <p>Upload your CSV files easily and manage your data seamlessly. Our platform supports a variety of data operations to help you organize and utilize your data effectively.</p>
+                <ul>
+                    <li>Upload CSV Files</li>
+                    <li>List All Uploaded Files</li>
+                    <li>View Detailed File Information</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h2>Data Cleaning and Preprocessing</h2>
+                <p>Ensure your data is clean and ready for analysis. We offer tools to fill null values, clean data, and create structured tables from your CSV files.</p>
+                <ul>
+                    <li>Fill Null Values</li>
+                    <li>View and Analyze Cleaned Data</li>
+                    <li>Clean CSV Files</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h2>Data Analysis and Visualization</h2>
+                <p>Transform your data into valuable insights with our advanced analysis and visualization tools. Create dynamic dashboards and analyze your data thoroughly.</p>
+                <ul>
+                    <li>Analyze Uploaded Files</li>
+                    <li>Create and View Dynamic Dashboards</li>
+                    <li>Analyze Custom Data Models</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h2>Custom Data Models</h2>
+                <p>Store and analyze data in custom models tailored to your specific needs. Our platform allows you to upload data into custom models and perform advanced analyses.</p>
+                <ul>
+                    <li>List CSV Files for Custom Models</li>
+                    <li>Upload Data to Custom Models</li>
+                    <li>View and Analyze Stored Data</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

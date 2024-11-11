@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Uploaded Files{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/datacsv/listcsvfile.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="main-container">
+    <div class="main">
+        <h2>Uploaded CSV Files</h2>
+        <div class="dropdown">
+            <button onclick="toggleDropdown()" class="dropbtn">Select File</button>
+            <div id="fileDropdown" class="dropdown-content">
+                {% for file in files %}
+                    <button onclick="selectFile('{{ file.file.name }}')">{{ file.file.name }}</button>
+                {% empty %}
+                    <button disabled>No files uploaded yet.</button>
+                {% endfor %}
+            </div>
+        </div>
+        <p id="selectedFileMessage">No file selected.</p>
+        <a href="{% url 'uploadcsv' %}" class="upload-link">Upload more files</a>
+    </div>
+</div>
+
+<script>
+    function toggleDropdown() {
+        document.getElementById("fileDropdown").classList.toggle("show");
+    }
+
+    function selectFile(fileName) {
+        document.getElementById("selectedFileMessage").innerText = "Selected file: " + fileName;
+        // Add logic here to perform actions based on selected file
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
+
+{% endblock %}

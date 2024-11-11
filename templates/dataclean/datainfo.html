@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Info</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+        }
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+        h2 {
+            color: #555;
+            margin-top: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #fff;
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        p {
+            background: #fff;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            color: #333;
+            text-align: center;
+        }
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+        select {
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .info-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+        .info-table {
+            width: 100%;
+            max-width: 48%;
+            margin: 10px 0;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+        }
+        .info-table h3 {
+            margin-top: 0;
+            text-align: center;
+        }
+        .info-table ul, .info-table p {
+            margin: 0;
+            padding: 0;
+        }
+        .info-summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .info-summary .info-table {
+            flex: 1;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select CSV File</h1>
+        <form method="post" action="{% url 'viewdatainfo' %}">
+            {% csrf_token %}
+            <div style="text-align: center; margin-bottom: 10px;">
+                <select name="csv_file">
+                    {% for file in files %}
+                        <option value="{{ file.path }}">{{ file.name }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit">Submit</button>
+                <a href="http://127.0.0.1:8000/dataclean/fillnull/">
+                    <button type="button">Cancel</button>
+                </a>
+            </div>
+        </form>
+
+        {% if info %}
+            <h2>Data Information</h2>
+            <div class="info-summary">
+                <div class="info-table">
+                    <h3>Total Rows</h3>
+                    <p>{{ info.total_rows }}</p>
+                </div>
+                <div class="info-table">
+                    <h3>Total Columns</h3>
+                    <p>{{ info.total_columns }}</p>
+                </div>
+            </div>
+            <div class="info-section">
+                <div class="info-table">
+                    <h3>Columns</h3>
+                    <ul>
+                        {% for column in info.columns %}
+                            <li>{{ column }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="info-table">
+                    <h3>Null Values</h3>
+                    <ul>
+                        {% for key, value in info.null_values.items %}
+                            <li>{{ key }}: {{ value }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="info-table">
+                    <h3>Data Types</h3>
+                    <ul>
+                        {% for key, value in info.data_types.items %}
+                            <li>{{ key }}: {{ value }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

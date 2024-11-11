@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activate Your Account</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content p {
+            line-height: 1.6;
+        }
+        .content a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .content a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            background-color: #f1f1f1;
+            color: #333333;
+            padding: 10px 20px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Activate Your Account</h1>
+        </div>
+        <div class="content">
+            <p>Hello {{ user.name }},</p>
+            <p>Welcome to Nighwant Technology!</p>
+            <p>We are excited to have you on board. Please activate your account by clicking the link below:</p>
+            <p><a href="{{ activation_link }}">Activate Your Account</a></p>
+            <p>After activation, you can log in to our website and use our facilities.</p>
+            <p>Regards,</p>
+            <p>The Nighwan Technology Team</p>
+        </div>
+        <div class="footer">
+            <p><strong>Nighwan Technology Pvt Ltd</strong></p>
+            <p>Gulmohar Park, Hyderabad, TN 500019</p>
+            <p>For more information, email us at <a href="mailto:info@nighwantech.com">info@nighwantech.com</a></p>
+            <p><a href="https://nighwantech.com">Visit our website</a></p>
+        </div>
+    </div>
+</body>
+</html>

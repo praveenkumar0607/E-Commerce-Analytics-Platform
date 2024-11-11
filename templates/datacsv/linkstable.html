@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Data{% endblock %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/datacsv/links.css' %}">
+
+<div class="main-container">
+    <div class="main">
+        <h2>Data Operations</h2>
+        <table>
+            <tr>
+                <th>Operation</th>
+                <th>Link</th>
+            </tr>
+            <tr>
+                <td>Upload a CSV File</td>
+                <td><a href="{% url 'uploadcsv' %}">Upload CSV</a></td>
+            </tr>
+            <tr>
+                <td>Analyze Uploaded Files</td>
+                <td><a href="{% url 'listfilesanalysis' %}">Analyze Files</a></td>
+            </tr>
+        </table>
+
+        <h1>CSV Data File Operations</h1>
+        <table>
+            <tr>
+                <th>Operation</th>
+                <th>Link</th>
+            </tr>
+            <tr>
+                <td>List All CSV Files</td>
+                <td><a href="{% url 'listcsvfiles' %}">List CSV Files</a></td>
+            </tr>
+            <tr>
+                <td>Fill Null Values</td>
+                <td><a href="{% url 'fillnull' %}">Fill Null Values</a></td>
+            </tr>
+            <tr>
+                <td>View Cleaned Data</td>
+                <td><a href="{% url 'cleaneddata' %}">View Cleaned Data</a></td>
+            </tr>
+            <tr>
+                <td>View Data Info</td>
+                <td><a href="{% url 'viewdatainfo' %}">View Data Info</a></td>
+            </tr>
+            <tr>
+                <td>Clean CSV File</td>
+                <td><a href="{% url 'clean-csv-file' %}">Clean CSV File</a></td>
+            </tr>
+            <tr>
+                <td>Create a Table from Your Cleaned CSV File</td>
+                <td><a href="{% url 'createcsvtable' %}">Create Table</a></td>
+            </tr>
+            <tr>
+                <td>List All CSV Tables</td>
+                <td><a href="{% url 'listcsvtables' %}">List CSV Tables</a></td>
+            </tr>
+        </table>
+
+        <h1>Upload Data into Static Model and Analyze</h1>
+        <table>
+            <tr>
+                <th>Operation</th>
+                <th>Link</th>
+            </tr>
+            <tr>
+                <td>List CSV Files to Store Data in Static Model</td>
+                <td><a href="{% url 'listfiles' %}">List CSV Uploded Files</a></td>
+            </tr>
+            <tr>
+                <td>Upload Data to Static Model</td>
+                <td><a href="{% url 'dataupload' %}">Upload Data</a></td>
+            </tr>
+            <tr>
+                <td>View Stored Data in Custom Model</td>
+                <td><a href="{% url 'userdata' %}">View Custom Data</a></td>
+            </tr>
+            <tr>
+                <td>Analyze Custom Data</td>
+                <td><a href="{% url 'analyzeuserdata' %}">Analyze Custom Data</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+{% endblock %}

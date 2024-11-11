@@ -1,0 +1,119 @@
+Script started on 2024-06-14 12:13:10+05:30 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="80" LINES="24"]
+[?2004h]0;deepak@deepak-HP-ProBook-445-G1: ~/Documents/Nighwantech[01;32mdeepak@deepak-HP-ProBook-445-G1[00m:[01;34m~/Documents/Nighwantech[00m$ django-admin
+[?2004l
+Type 'django-admin help <subcommand>' for help on a specific subcommand.
+
+Available subcommands:
+
+[31m[django][0m
+    check
+    compilemessages
+    createcachetable
+    dbshell
+    diffsettings
+    dumpdata
+    flush
+    inspectdb
+    loaddata
+    makemessages
+    makemigrations
+    migrate
+    optimizemigration
+    runserver
+    sendtestemail
+    shell
+    showmigrations
+    sqlflush
+    sqlmigrate
+    sqlsequencereset
+    squashmigrations
+    startapp
+    startproject
+    test
+    testserver
+[31mNote that only Django core commands are listed as settings are not properly configured (error: Requested setting INSTALLED_APPS, but settings are not configured. You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.).[0m
+[?2004h]0;deepak@deepak-HP-ProBook-445-G1: ~/Documents/Nighwantech[01;32mdeepak@deepak-HP-ProBook-445-G1[00m:[01;34m~/Documents/Nighwantech[00m$ django-admin start proj ect nighwantech .
+[?2004lNo Django settings specified.
+Unknown command: 'start'. Did you mean startapp?
+Type 'django-admin help' for usage.
+[?2004h]0;deepak@deepak-HP-ProBook-445-G1: ~/Documents/Nighwantech[01;32mdeepak@deepak-HP-ProBook-445-G1[00m:[01;34m~/Documents/Nighwantech[00m$ django-admin start project nighwantech .[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C projec[1P[A]0;deepak@deepak-HP-ProBook-445-G1: ~/Documents/Nighwantech[01;32mdeepak@deepak-HP-ProBook-445-G1[00m:[01;34m~/Documents/Nighwantech[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+[?2004lNo Django settings specified.
+Unknown command: 'star'. Did you mean startapp?
+Type 'django-admin help' for usage.
+[?2004h]0;deepak@deepak-HP-ProBook-445-G1: ~/Documents/Nighwantech[01;32mdeepak@deepak-HP-ProBook-445-G1[00m:[01;34m~/Documents/Nighwantech[00m$ django-admin star project nighwantech .[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cproject[1P[A]0;deepak@deepak-HP-ProBook-445-G1: ~/Documents/Nighwantech[01;32mdeepak@deepak-HP-ProBook-445-G1[00m:[01;34m~/Documents/Nighwantech[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctprojec[1@t[A]0;deepak@deepak-HP-ProBook-445-G1: ~/Documents/Nighwantech[01;32mdeepak@deepak-HP-ProBook-445-G1[00m:[01;34m~/Documents/Nighwantech[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+[?2004l[?2004h]0;deepak@deepak-HP-ProBook-445-G1: ~/Documents/Nighwantech[01;32mdeepak@deepak-HP-ProBook-445-G1[00m:[01;34m~/Documents/Nighwantech[00m$ ls
+[?2004l[0m[01;32mmanage.py[0m  [01;34mnighwantech[0m  Pipfile  Pipfile.lock  typescript
+[?2004h]0;deepak@deepak-HP-ProBook-445-G1: ~/Documents/Nighwantech[01;32mdeepak@deepak-HP-ProBook-445-G1[00m:[01;34m~/Documents/Nighwantech[00m$ code .
+[?2004l[?2004h]0;deepak@deepak-HP-ProBook-445-G1: ~/Documents/Nighwantech[01;32mdeepak@deepak-HP-ProBook-445-G1[00m:[01;34m~/Documents/Nighwantech[00m$ code .
+[?2004l[?2004h]0;deepak@deepak-HP-ProBook-445-G1: ~/Documents/Nighwantech[01;32mdeepak@deepak-HP-ProBook-445-G1[00m:[01;34m~/Documents/Nighwantech[00m$ ls
+[?2004ldb.sqlite3  [0m[01;32mmanage.py[0m  [01;34mnighwantech[0m  Pipfile  Pipfile.lock  typescript
+[?2004h]0;deepak@deepak-HP-ProBook-445-G1: ~/Documents/Nighwantech[01;32mdeepak@deepak-HP-ProBook-445-G1[00m:[01;34m~/Documents/Nighwantech[00m$ cd..\[K[K[K ..
+[?2004l[?2004h]0;deepak@deepak-HP-ProBook-445-G1: ~/Documents[01;32mdeepak@deepak-HP-ProBook-445-G1[00m:[01;34m~/Documents[00m$ ls
+[?2004l[0m[01;34mBasciLearningofProgramming[0m  mydatabase.db
+[01;34mDataStructure[0m               [01;34mmy-project[0m
+[01;34mdjang-project[0m               [01;34mMySQL-20240324T180721Z-001[0m
+[01;34md-project[0m                   [01;31mMySQL-20240324T180721Z-001.zip[0m
+[01;34mExcel[0m                       [01;34mNighwantech[0m
+index.html                  [01;34mwscubetech[0m
+[01;34mjava-app[0m
+[?2004h]0;deepak@deepak-HP-ProBook-445-G1: ~/Documents[01;32mdeepak@deepak-HP-ProBook-445-G1[00m:[01;34m~/Documents[00m$ cd ..
+[?2004l[?2004h]0;deepak@deepak-HP-ProBook-445-G1: ~[01;32mdeepak@deepak-HP-ProBook-445-G1[00m:[01;34m~[00m$ ls
+[?2004l countries.2csv
+ countries.csv
+ covid2.py
+ covid.py
+ [0m[01;34mDataGripProjects[0m
+ [01;34mDataScience[0m
+ [01;34mDataStructureAndAlgorithm[0m
+ [01;34mDesktop[0m
+ [01;34mDocuments[0m
+ [01;34mDownloads[0m
+ [01;31mgrafana_10.4.2_amd64.deb[0m
+ grafanavis.html
+'grafan python parogram.py'
+ influxdata-archive_compat.key
+ LinkMLT
+ [01;34mMusic[0m
+ [01;34mmy-project[0m
+ mysqlcommand.py
+ [01;34mnode_exporter-1.8.0.linux-amd64[0m
+ [01;31mnode_exporter-1.8.0.linux-amd64.tar.gz[0m
+ [01;34mPictures[0m
+ [01;34mPostman[0m
+ [01;31mpostman.tar.gz[0m
+ [01;34mprometheus-2.30.0.linux-amd64[0m
+ [01;34mprometheus-2.52.0-rc.1.linux-amd64[0m
+ [01;31mprometheus-2.52.0-rc.1.linux-amd64.tar.gz[0m
+ [01;34mPublic[0m
+ [01;34mpycharm-community-2023.1[0m
+ [01;31mpycharm-community-2023.1.tar.gz[0m
+ [01;34mPycharmProjects[0m
+ [01;32mset_env_and_activate.sh[0m
+ [01;34msnap[0m
+'Sql Querysfor graphana visulation.py'
+ [01;34mTemplates[0m
+ Terminal
+ test.txt
+ typescript
+'Typing test'
+ Untitled.ipynb
+ [01;34mVideos[0m
+ worldmap.py
+[?2004h]0;deepak@deepak-HP-ProBook-445-G1: ~[01;32mdeepak@deepak-HP-ProBook-445-G1[00m:[01;34m~[00m$ cd Music
+[?2004l[?2004h]0;deepak@deepak-HP-ProBook-445-G1: ~/Music[01;32mdeepak@deepak-HP-ProBook-445-G1[00m:[01;34m~/Music[00m$ ls
+[?2004l[0m[01;34manalytics[0m                            [01;34mdjango-project[0m  [01;34mpersonal[0m
+[01;34mDatabase[0m                             [01;34mFronted[0m         [01;34mportfolio[0m
+[01;34mdjango-income-expense-website[0m        [01;34mgithub[0m          [01;34mprojectfile[0m
+[01;34mdjango-portfolio-website-master[0m      [01;34mhello-docker[0m    [01;34mstorefront2[0m
+[01;31mdjango-portfolio-website-master.zip[0m  [01;34mMysql[0m           [01;34mwscubetech[0m
+[?2004h]0;deepak@deepak-HP-ProBook-445-G1: ~/Music[01;32mdeepak@deepak-HP-ProBook-445-G1[00m:[01;34m~/Music[00m$ cd django-income-expense-website/
+[?2004l[?2004h]0;deepak@deepak-HP-ProBook-445-G1: ~/Music/django-income-expense-website[01;32mdeepak@deepak-HP-ProBook-445-G1[00m:[01;34m~/Music/django-income-expense-website[00m$ ls
+[?2004l[0m[01;34mauthentication[0m  [01;34mexpenses[0m        [01;32mmanage.py[0m  Pipfile.lock  [01;34mtemplates[0m
+db.sqlite3      [01;34mexpensewebsite[0m  Pipfile    [01;34mstatic[0m        typescript
+[?2004h]0;deepak@deepak-HP-ProBook-445-G1: ~/Music/django-income-expense-website[01;32mdeepak@deepak-HP-ProBook-445-G1[00m:[01;34m~/Music/django-income-expense-website[00m$ code .
+[?2004l[?2004h]0;deepak@deepak-HP-ProBook-445-G1: ~/Music/django-income-expense-website[01;32mdeepak@deepak-HP-ProBook-445-G1[00m:[01;34m~/Music/django-income-expense-website[00m$ cd music
+[?2004lbash: cd: music: No such file or directory
+[?2004h]0;deepak@deepak-HP-ProBook-445-G1: ~/Music/django-income-expense-website[01;32mdeepak@deepak-HP-ProBook-445-G1[00m:[01;34m~/Music/django-income-expense-website[00m$ cd Musi[K[K[K[K..
+[?2004l[?2004h]0;deepak@deepak-HP-ProBook-445-G1: ~/Music[01;3

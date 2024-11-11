@@ -1,0 +1,100 @@
+/* home.css */
+
+/* Basic reset and global styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h1, h2 {
+    color: #2e7d32; /* Dark green color */
+}
+
+ul {
+    list-style-type: square;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main container styling */
+.main-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.main {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Heading styling */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ff5722; /* Orange color */
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #4caf50; /* Green color */
+}
+
+/* Paragraph styling */
+p {
+    margin-bottom: 20px;
+    color: #616161; /* Gray color */
+}
+
+/* List styling */
+ul {
+    margin: 0 0 20px 20px;
+}
+
+li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #2e7d32; /* Dark green color */
+}
+
+/* Box container styling */
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.box {
+    width: 48%;
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+    .box {
+        width: 100%;
+    }
+}
+
+/* Link styling */
+a {
+    color: #ff5722; /* Orange color */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

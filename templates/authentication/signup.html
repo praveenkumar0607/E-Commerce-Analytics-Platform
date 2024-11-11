@@ -1,0 +1,26 @@
+
+
+<h2> <i><b>Welcome to Nighwan Technology </i></b> </h2>
+<div class="form sign-up">
+
+    <form method="post" action="{% url 'signup' %}" class="form sign-up">
+        {% csrf_token %}
+        <label>
+            <span>Name</span>
+            <input type="text" class="form-control" id="username" name="name" placeholder=" Name " required>
+        </label>
+        <label>
+            <span>Email</span>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email Address" required>
+        </label>
+        <label>
+            <span>Password</span>
+            <input type="password" name="password" required/>
+        </label>
+        <label>
+            <span>Confirm Password</span>
+            <input type="password" name="password2" required/>
+        </label>
+        <button type="submit" class="submit">Sign Up</button>
+    </form>                  
+</div>

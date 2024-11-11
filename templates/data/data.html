@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Upload CSV{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/data/datacsv.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="main">
+    <h1>Append The Data in Your Static  Model</h1>
+    <form method="post" enctype="multipart/form-data" action="{% url 'dataupload' %}" class="upload-form">
+        {% csrf_token %}
+        <label for="csv_file">Choose CSV File:</label>
+        <input type="file" id="csv_file" name="file" accept=".csv" required>
+        
+ 
+        <button type="submit">Upload</button>
+    </form>
+</div>
+{% endblock %}
+
+
+
+{% comment %} 
+    <div class="container">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            <strong>Message:</strong> {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endfor %}
+
+        <form method="post" enctype="multipart/form-data" action="{% url 'dataupload' %}">
+            {% csrf_token %}
+            <h1>Upload The Data to Store in Database</h1>
+
+            {% if user.is_authenticated %}
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="username" value="{{ user.username }}" readonly>
+            </div>
+            {% endif %}
+
+            <div class="form-group">
+                <label for="file">File Upload Here</label>
+                <input type="file" name="file" class="form-control-file mt-3" id="file">
+            </div>
+
+            <button type="submit" class="btn btn-success btn-block">Submit</button>
+        </form>
+    </div> {% endcomment %}

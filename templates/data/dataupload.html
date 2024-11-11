@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Upload CSV{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/uploaddata.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="main">
+    <h1>Upload CSV</h1>
+    <form method="post" enctype="multipart/form-data" class="upload-form">
+        {% csrf_token %}
+        <label for="csv_file">Choose CSV File:</label>
+        <input type="file" id="csv_file" name="csv_file" accept=".csv" required>
+        
+        <label for="table_name">Table Name:</label>
+        <input type="text" id="table_name" name="table_name" placeholder="Enter table name" required>
+        
+        <button type="submit">Upload</button>
+    </form>
+</div>
+{% endblock %}

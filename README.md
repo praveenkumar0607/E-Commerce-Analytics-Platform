@@ -66,7 +66,7 @@ E-Commerce-Analytics-Platform/
 │
 ├── data/                    # Sample data and database files
 ├── analytics/               # Core analytics scripts and notebooks
-├── e_commerce_platform/     # Main Django project files
+├── nighwantech     # Main Django project files
 │   ├── settings.py          # Project settings
 │   ├── urls.py              # URL routing
 │   └── ...
